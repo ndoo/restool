@@ -43,8 +43,6 @@
 #include "mc_v9/fsl_dpbp.h"
 #include "mc_v10/fsl_dpbp.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpbp info command options
  */

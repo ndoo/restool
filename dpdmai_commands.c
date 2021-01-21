@@ -42,8 +42,6 @@
 #include "mc_v9/fsl_dpdmai.h"
 #include "mc_v10/fsl_dpdmai.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpdmai info command options
  */
@@ -580,7 +578,6 @@ static int cmd_dpdmai_create_v9(void)
 		"create a DPDMAI with 2,4 priorities:\n"
 		"   $ restool dpdmai create --priorities=2,4\n"
 		"\n";
-
 
 	return create_dpdmai(MC_FW_VERSION_9, usage_msg);
 }

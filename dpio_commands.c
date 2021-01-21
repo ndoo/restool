@@ -43,8 +43,6 @@
 #include "mc_v9/fsl_dpio.h"
 #include "mc_v10/fsl_dpio.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpio info command options
  */

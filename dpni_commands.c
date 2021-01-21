@@ -58,7 +58,6 @@
 	DPNI_OPT_QOS_MASK_SUPPORT |			\
 	DPNI_OPT_FS_MASK_SUPPORT)
 
-
 #define ALL_DPNI_OPTS_V10 (				\
 	DPNI_OPT_TX_FRM_RELEASE |			\
 	DPNI_OPT_NO_MAC_FILTER |			\
@@ -69,8 +68,6 @@
 	DPNI_OPT_HAS_OPR |				\
 	DPNI_OPT_OPR_PER_TC |				\
 	DPNI_OPT_SINGLE_SENDER)
-
-enum mc_cmd_status mc_status;
 
 /**
  * max_dist: Maximum distribution size for Rx traffic class;
@@ -86,13 +83,11 @@ struct dpni_config {
 	uint16_t dpni_handle;
 };
 
-
 #define RESTOOL_DPNI_CREATE \
 	_IOWR(RESTOOL_IOCTL_TYPE, 0x5, struct dpni_config)
 
 #define RESTOOL_DPNI_GET_ATTRIBUTES \
 	_IOWR(RESTOOL_IOCTL_TYPE, 0x6, struct dpni_config)
-
 
 /**
  * dpni info command options
@@ -463,7 +458,6 @@ static int cmd_dpni_help_v10(void)
 	printf(help_msg);
 	return 0;
 }
-
 
 static void print_dpni_options(uint32_t options)
 {
@@ -1303,7 +1297,6 @@ static int create_dpni_v9(const char *usage_msg)
 		return error;
 	}
 
-
 	memset(&dpni_attr, 0, sizeof(struct dpni_attr));
 	error = dpni_get_attributes_v9(&restool.mc_io, 0, dpni_handle,
 				       &dpni_attr, &dpni_extended_cfg);
@@ -1860,7 +1853,6 @@ out:
 
 	return error;
 }
-
 
 static int cmd_dpni_update_v10(void)
 {

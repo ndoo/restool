@@ -43,8 +43,6 @@
 #include "mc_v9/fsl_dpmcp.h"
 #include "mc_v10/fsl_dpmcp.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpmcp info command options
  */
@@ -362,7 +360,6 @@ static int cmd_dpmcp_info_v10(void)
 {
 	return info_dpmcp(MC_FW_VERSION_10);
 }
-
 
 static int create_dpmcp_v9(struct dpmcp_cfg *dpmcp_cfg)
 {

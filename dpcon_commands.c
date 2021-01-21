@@ -44,8 +44,6 @@
 #include "mc_v9/fsl_dpcon.h"
 #include "mc_v10/fsl_dpcon.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpcon info command options
  */

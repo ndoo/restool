@@ -42,8 +42,6 @@
 #include "mc_v9/fsl_dprtc.h"
 #include "mc_v10/fsl_dprtc.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dprtc info command options
  */

@@ -40,8 +40,6 @@
 #include "utils.h"
 #include "mc_v9/fsl_dpdbg.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpdbg info command options
  */

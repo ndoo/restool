@@ -122,7 +122,6 @@ struct dpni_config {
 	DPSW_OPT_FLOODING_METERING_DIS |	\
 	DPSW_OPT_METERING_EN)
 
-
 /* dpl stuff */
 #define RESTOOL_DYNAMIC_DPL "./dynamic-dpl.dts"
 
@@ -181,8 +180,6 @@ static struct container_list *container_head;
 static struct obj_list *obj_head;
 static struct conn_list *conn_head;
 
-enum mc_cmd_status mc_status;
-
 /**
  * compare_insert_obj - compare the newly added object node with existing ones,
  *			insert in sorted order
@@ -227,7 +224,6 @@ static int compare_insert_obj(struct obj_list **head, struct obj_list *target)
 					return 0;
 				}
 
-
 				prev->next = target;
 				target->next = curr;
 				return 0;
@@ -265,7 +261,6 @@ static int find_all_obj_desc(uint32_t dprc_id,
 
 	int num_child_devices;
 	int error = 0;
-	enum mc_cmd_status mc_status;
 	struct container_list *prev_cont;
 	struct container_list *curr_cont;
 	struct dprc_attributes dprc_attr;
@@ -459,7 +454,6 @@ static void parse_dprc_options(FILE *fp, uint64_t options)
 	if ((options & ~ALL_DPRC_OPTS_DPL) != 0)
 		fprintf(fp, "\t\t\t/* Unrecognized options found... */\n");
 
-
 	snprintf(buf, 14, "\t\t\toptions = ");
 
 	if (options & DPRC_CFG_OPT_SPAWN_ALLOWED) {
@@ -590,7 +584,6 @@ static int write_containers(void)
 			fprintf(fp, "\t\t\tparent = \"dprc@%d\";\n",
 				curr_cont->parent_id);
 		parse_dprc_options(fp, curr_cont->options);
-
 
 		fprintf(fp, "\n");
 		fprintf(fp, "\t\t\tobjects {\n");
@@ -1060,7 +1053,6 @@ static int parse_dpseci(FILE *fp, struct obj_list *curr)
 
 	free(priorities);
 
-
 out:
 	if (dpseci_opened) {
 		int error2;
@@ -1086,7 +1078,6 @@ static int parse_dpci(FILE *fp, struct obj_list *curr)
 	struct dpci_peer_attr dpci_peer_attr;
 	bool dpci_opened = false;
 	struct conn_list *curr_conn;
-
 
 	error = dpci_open(&restool.mc_io, 0, curr->id, &dpci_handle);
 	if (error < 0) {
@@ -1890,7 +1881,6 @@ static int write_objects(void)
 	fprintf(fp,
 		"\t *****************************************************************/\n");
 
-
 	fprintf(fp, "\tobjects {\n");
 	curr_obj = obj_head;
 	while (curr_obj) {
@@ -1948,7 +1938,6 @@ static int write_objects(void)
 			else if (restool.mc_fw_version.major == 10)
 				parse_dpni_v10(fp, curr_obj);
 		}
-
 
 		/* following objects have possible connections and interface*/
 		if (strcmp(curr_obj->type, "dpdmux") == 0) {

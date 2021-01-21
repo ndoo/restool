@@ -51,8 +51,6 @@
 	DPRC_CFG_OPT_AIOP |			\
 	DPRC_CFG_OPT_IRQ_CFG_ALLOWED)
 
-enum mc_cmd_status mc_status;
-
 /**
  * dprc sync command options
  */
@@ -69,7 +67,6 @@ static struct option dprc_sync_options[] = {
 };
 
 C_ASSERT(ARRAY_SIZE(dprc_sync_options) <= MAX_NUM_CMD_LINE_OPTIONS + 1);
-
 
 /**
  * dprc list command options
@@ -537,7 +534,6 @@ static int cmd_dprc_list(void)
 		restool.cmd_option_mask &= ~ONE_BIT_MASK(LIST_OPT_HELP);
 		return 0;
 	}
-
 
 	if (restool.cmd_option_mask & ONE_BIT_MASK(LIST_OPT_FULL_PATH)) {
 		restool.cmd_option_mask &= ~ONE_BIT_MASK(LIST_OPT_FULL_PATH);
@@ -1803,7 +1799,6 @@ static int parse_endpoint(char *endpoint_str, struct dprc_endpoint *endpoint)
 	return 0;
 }
 
-
 static int cmd_dprc_connect(void)
 {
 	static const char usage_msg[] =
@@ -2147,7 +2142,6 @@ struct object_command dprc_commands[] = {
 	{ .cmd_name = "set-label",
 	  .options = dprc_set_label_options,
 	  .cmd_func = cmd_dprc_set_label },
-
 
 	{ .cmd_name = "connect",
 	  .options = dprc_connect_options,

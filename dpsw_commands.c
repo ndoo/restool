@@ -50,8 +50,6 @@
 	DPSW_OPT_FLOODING_METERING_DIS |	\
 	DPSW_OPT_METERING_EN)
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpsw info command options
  */

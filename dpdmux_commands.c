@@ -47,8 +47,6 @@
 	DPDMUX_OPT_BRIDGE_EN |		\
 	DPDMUX_OPT_CLS_MASK_SUPPORT)
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpdmux info command options
  */
@@ -228,7 +226,6 @@ static struct option dpdmux_create_options_v9[] = {
 };
 
 C_ASSERT(ARRAY_SIZE(dpdmux_create_options_v9) <= MAX_NUM_CMD_LINE_OPTIONS + 1);
-
 
 /**
  * dpdmux destroy command options
@@ -537,7 +534,6 @@ out:
 	return error;
 }
 
-
 static int print_dpdmux_info(uint32_t dpdmux_id, int mc_fw_version)
 {
 	int error;
@@ -638,7 +634,6 @@ static int parse_dpdmux_manip(char *manip_str, enum dpdmux_manip *manip)
 	printf("Invalid dpdmux manip input.\n");
 	return -EINVAL;
 }
-
 
 static int parse_dpdmux_method(char *method_str, enum dpdmux_method *method)
 {
@@ -1002,7 +997,6 @@ static int create_dpdmux_v10(const char *usage_msg)
 
 	return 0;
 }
-
 
 static int cmd_dpdmux_create_v10(void)
 {

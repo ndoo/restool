@@ -43,8 +43,6 @@
 #include "mc_v9/fsl_dpseci.h"
 #include "mc_v10/fsl_dpseci.h"
 
-enum mc_cmd_status mc_status;
-
 /**
  * dpseci info command options
  */
